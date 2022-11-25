@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Size</title>
+</head>
+<body>
+  <div class="Size">
+    <div class="input">
+      <input class="get" id="Text" placeholder="Default pixel 20px"/>
+      <button  id="Size+">+</button>
+      <button  id="Size-">-</button>
+      <p>The Pixel size is: <span id = "result"></span></p>
+    </div>
+  </div>
+
+  <style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: beige;
+    }
+    </style>
+
+  <script>
+    
+    let word = document.getElementById("Text");
+    let increse = document.getElementById("Size+");
+    let decrese = document.getElementById("Size-");
+    let size = 20;
+    
+    //size increment
+    increse.addEventListener("click", large);
+    function large() {
+      size = size + 2;
+      word.style.fontSize = `${size}px`;
+      document.getElementById("result").innerHTML =`${size}px`;
+    }
+    
+    //size decrement
+    decrese.addEventListener("click", small);
+    function small() {
+      size = size - 2;
+      word.style.fontSize = `${size}px`;
+      document.getElementById("result").innerHTML =`${size}px`;
+    }
+  </script>
+
+</body>
+</html>
